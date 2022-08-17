@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sbx.app.applet.mapper.AppletNavMapper">
+    <select id="getSortValue" resultType="java.lang.Integer">
+        select COALESCE(max(sort),0) + 1 from applet_nav
+    </select>
+</mapper>
