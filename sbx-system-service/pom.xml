@@ -20,7 +20,7 @@
         <sbx-core-map.version>1.0.0-SNAPSHOT</sbx-core-map.version>
         <sbx-core-xxl-job.version>1.0.0-SNAPSHOT</sbx-core-xxl-job.version>
         <alibaba.nacos.version>2.0.3</alibaba.nacos.version>
-        <shardingsphere-jdbc.version>5.1.2</shardingsphere-jdbc.version>
+        <shardingsphere-jdbc.version>5.2.1</shardingsphere-jdbc.version>
 
     </properties>
 

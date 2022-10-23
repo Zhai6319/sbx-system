@@ -64,3 +64,8 @@ spring:
         key-generators:
           snowflake:
             type: SNOWFLAKE
+    mode:
+      type: Standalone
+      overwrite: false
+      repository:
+        type: JDBC
