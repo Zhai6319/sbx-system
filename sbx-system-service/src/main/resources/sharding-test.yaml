@@ -1,0 +1,13 @@
+dataSources:
+  write_ds:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-uf6z262qov0g77ro00o.mysql.rds.aliyuncs.com:3306/sbx-system-dev?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: sbx_dev
+    password: gU496n2t9DLuecmC7YHk
+  read_ds_0:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-uf6z262qov0g77ro00o.mysql.rds.aliyuncs.com:3306/sbx-system-dev?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: sbx_dev
+    password: gU496n2t9DLuecmC7YHk

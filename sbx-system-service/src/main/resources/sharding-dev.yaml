@@ -1,0 +1,76 @@
+dataSources:
+  write_ds:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-uf6z262qov0g77ro00o.mysql.rds.aliyuncs.com:3306/sbx-system-dev?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: sbx_dev
+    password: gU496n2t9DLuecmC7YHk
+  read_ds_0:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-uf6z262qov0g77ro00o.mysql.rds.aliyuncs.com:3306/sbx-system-dev?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: sbx_dev
+    password: gU496n2t9DLuecmC7YHk
+  read_ds_1:
+    dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-uf6z262qov0g77ro00o.mysql.rds.aliyuncs.com:3306/sbx-system-dev?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: sbx_dev
+    password: gU496n2t9DLuecmC7YHk
+#mode:
+#  type: Cluster
+#  repository:
+#    type: SbxNacos
+#    props:
+#      namespace: 58fa1211-4900-4562-b14f-e2d353818511
+#      server-lists: 47.100.114.20:8848
+#      retryIntervalMilliseconds: 500
+#      timeToLiveSeconds: 60
+#      username: nacos
+#      password: zhai6319.._
+mode:
+  type: Cluster
+  repository:
+    type: zookeeper
+    props:
+      namespace: dev
+      server-lists: 47.100.114.20:2181
+      retryIntervalMilliseconds: 500
+      timeToLiveSeconds: 60
+#      username: nacos
+#      password: zhai6319.._
+rules:
+- !ENCRYPT
+  tables:
+    user_info:
+      columns:
+        mobile:
+          plainColumn: mobile_plain
+          cipherColumn: mobile
+          encryptorName: encryptor_aes
+      queryWithCipherColumn: true
+  encryptors:
+    encryptor_aes:
+      type: AES
+      props:
+        aes-key-value: hkiqAXU6Ur5fixGHaO4Lb2V2ggausYwW
+    assisted_encryptor:
+      type: AES
+      props:
+        aes-key-value: hkiqAXU6Ur5fixGHaO4Lb2V2ggausYwW
+    like_encryptor:
+      type: CHAR_DIGEST_LIKE
+    pwd_encryptor:
+      type: MD5
+#mode:
+#  type: Standalone
+#  repository:
+#    type: JDBC
+#
+#  shardingsphere:
+#    rules:
+#      encrypt:
+#        encryptors:
+#          encryptor-aes:
+#            props:
+#              aes-key-value: hkiqAXU6Ur5fixGHaO4Lb2V2ggausYwW
